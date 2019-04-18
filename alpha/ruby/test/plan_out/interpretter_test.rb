@@ -15,7 +15,8 @@ module PlanOut
 
     def test_interpreter
 
-      @proc = Interpreter(@compiled, @interpreter_salt, {'userid'=> 123454})
+      @proc = Interpreter.new(@compiled, @interpreter_salt, {'userid'=> 123454})
+
       @params = @proc.get_params
       assert_equal(@proc.get_params.get('specific_goal'), 1)
       assert_equal(@proc.get_params.get('ratings_goal'), 320)
